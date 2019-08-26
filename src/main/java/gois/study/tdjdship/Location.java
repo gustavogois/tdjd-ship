@@ -11,6 +11,11 @@ public class Location {
     private Point point;
     private Direction direction;
 
+    public Location(Point point, Direction direction) {
+        this.point = point;
+        this.direction = direction;
+    }
+
     public int getX() {
         return point.getX();
     }
@@ -30,10 +35,6 @@ public class Location {
         this.direction = direction;
     }
 
-    public Location(Point point, Direction direction) {
-        this.point = point;
-        this.direction = direction;
-    }
 
     public boolean forward() {
         return move(FORWARD, new Point(100, 100), new ArrayList<>());
