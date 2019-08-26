@@ -5,11 +5,12 @@ import java.util.List;
 public class Planet {
 
     private final Point max;
+    private List<Point> obstacles;
+
     public Point getMax() {
         return max;
     }
 
-    private List<Point> obstacles;
     public List<Point> getObstacles() {
         return obstacles;
     }

@@ -8,6 +8,9 @@ public class Location {
     private static final int FORWARD = 1;
     private static final int BACKWARD = -1;
 
+    private Point point;
+    private Direction direction;
+
     public int getX() {
         return point.getX();
     }
@@ -16,12 +19,10 @@ public class Location {
         return point.getY();
     }
 
-    private Point point;
     public Point getPoint() {
         return point;
     }
 
-    private Direction direction;
     public Direction getDirection() {
         return this.direction;
     }
