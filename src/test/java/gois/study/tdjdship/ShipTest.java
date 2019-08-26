@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class ShipSpec {
+public class ShipTest {
     @Test
     public void whenInstantiatedThenLocationIsSet() {
         Location location = new Location(new Point(21, 13), Direction.NORTH);
