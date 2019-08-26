@@ -10,4 +10,8 @@ public class Ship {
     public Location getLocation() {
         return location;
     }
+
+    public boolean moveForward() {
+        return location.forward();
+    }
 }
