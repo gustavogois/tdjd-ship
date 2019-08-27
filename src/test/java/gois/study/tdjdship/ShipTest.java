@@ -3,6 +3,9 @@ package gois.study.tdjdship;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.Assert.assertEquals;
 
 public class ShipTest {
@@ -122,5 +125,20 @@ public class ShipTest {
         location.getPoint().setX(1);
         ship.receiveCommands("b");
         assertEquals(location.getX(), planet.getMax().getX());
+    }
+
+    @Test
+    public void whenReceiveCommandsThenStopOnObstacle() {
+        List<Point> obstacles = new ArrayList<>();
+        obstacles.add(new Point(location.getX() + 1, location.getY()));
+        ship.getPlanet().setObstacles(obstacles);
+        Location expected = location.copy();
+        expected.turnRight();
+        // Moving forward would encounter an obstacle
+        // expected.forward(new Point(0, 0), new ArrayList<Point>());
+        expected.turnLeft();
+        expected.backward(new Point(0, 0), new ArrayList<>());
+        ship.receiveCommands("rflb");
+        assertEquals(ship.getLocation(), expected);
     }
 }
