@@ -118,7 +118,7 @@ public class ShipTest {
 
     @Test
     public void whenOverpassingWestBoundaryThenPositionIsReset() {
-        location.setDirection(Direction.WEST);
+        location.setDirection(Direction.EAST);
         location.getPoint().setX(1);
         ship.receiveCommands("b");
         assertEquals(location.getX(), planet.getMax().getX());
