@@ -24,12 +24,12 @@ public class Ship {
 
     public boolean moveForward() {
         // return location.forward();
-        return location.forward(planet.getMax());
+        return location.forward(planet.getMax(), planet.getObstacles());
     }
 
     public boolean moveBackward() {
         //return location.backward();
-        return location.backward(planet.getMax());
+        return location.backward(planet.getMax(), planet.getObstacles());
     }
 
     public void turnLeft() {

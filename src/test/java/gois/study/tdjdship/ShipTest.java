@@ -18,7 +18,10 @@ public class ShipTest {
     public void beforeTest() {
         Point max = new Point(50, 50);
         location = new Location(new Point(21, 13), Direction.NORTH);
-        planet = new Planet(max);
+        List<Point> obstacles = new ArrayList<>();
+        obstacles.add(new Point(44, 44));
+        obstacles.add(new Point(45, 46));
+        planet = new Planet(max, obstacles);
         // ship = new Ship(location);
         ship = new Ship(location, planet);
     }
