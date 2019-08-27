@@ -55,6 +55,7 @@ public class Ship {
             case "l":
                 turnLeft();
                 break;
+
         }
     }
 }
