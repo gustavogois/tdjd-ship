@@ -107,4 +107,12 @@ public class ShipTest {
         ship = new Ship(location, planet);*/
         assertEquals(ship.getPlanet(), planet);
     }
+
+    @Test
+    public void whenOverpassingEastBoundaryThenPositionIsReset() {
+        location.setDirection(Direction.EAST);
+        location.getPoint().setX(planet.getMax().getX());
+        ship.receiveCommands("f");
+        assertEquals(location.getX(), 1);
+    }
 }
