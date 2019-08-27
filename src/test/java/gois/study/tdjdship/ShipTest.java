@@ -85,6 +85,12 @@ public class ShipTest {
         assertEquals(ship.getLocation(), expected);
     }
 
+    /*
+    This is a bit longer, but is still not an overly complicated specification.
+    We're passing commands rflb (right, forwards, left, and backwards) and expecting that the Location changes
+    accordingly. As before, we're not verifying the end result (seeing whether the if coordinates have changed),
+    but checking whether we are invoking the correct calls to helper methods
+    */
     @Test
     public void whenReceiveCommandsThenAllAreExecuted() {
         Location expected = location.copy();
