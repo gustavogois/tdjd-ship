@@ -144,4 +144,13 @@ public class ShipTest {
         ship.receiveCommands("rflb");
         assertEquals(ship.getLocation(), expected);
     }
+
+    @Test
+    public void whenReceiveCommandsThenOForOkAndXForObstacle() {
+        List<Point> obstacles = new ArrayList<>();
+        obstacles.add(new Point(location.getX() + 1, location.getY()));
+        ship.getPlanet().setObstacles(obstacles);
+        String status = ship.receiveCommands("rflb");
+        assertEquals(status, "OXOO");
+    }
 }
