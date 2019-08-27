@@ -95,4 +95,12 @@ public class ShipTest {
         ship.receiveCommands("rflb");
         assertEquals(ship.getLocation(), expected);
     }
+
+    @Test
+    public void whenInstantiatedThenPlanetIsStored() {
+        Point max = new Point(50, 50);
+        Planet planet = new Planet(max);
+        ship = new Ship(location, planet);
+        assertEquals(ship.getPlanet(), planet);
+    }
 }
