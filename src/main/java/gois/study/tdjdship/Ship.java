@@ -1,10 +1,21 @@
 package gois.study.tdjdship;
 
 public class Ship {
+
     private final Location location;
+    private Planet planet;
 
     public Ship(Location location) {
         this.location = location;
+    }
+
+    public Ship(Location location, Planet planet) {
+        this.location = location;
+        this.planet = planet;
+    }
+
+    public Planet getPlanet() {
+        return planet;
     }
 
     public Location getLocation() {
