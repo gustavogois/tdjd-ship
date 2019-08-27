@@ -44,7 +44,14 @@ public class Ship {
     This is the simplest and shortest possible code that will make the specification pass. Later on, we might end up with something closer to the first version of the code; we might use some kind of a loop or come up with some other solution when things become more complicated. As for now, we are concentrating on one specification at a time and trying to make things simple. We are attempting to clear our mind by focusing only on the task at hand.
     */
 
-    public void receiveCommands(String f) {
-        moveForward();
+    public void receiveCommands(String command) {
+        switch(command) {
+            case "f":
+                moveForward();
+                break;
+            case "b":
+                moveBackward();
+                break;
+        }
     }
 }
